@@ -38,6 +38,12 @@ public class Driver {
 		Enumeration e =Collections.enumeration(abc);
 		while(e.hasMoreElements())
 			System.out.println(e.nextElement());
+//---------------------------------------------------------------------------//
+		//Driver for map
+		MapBasics data =new MapBasics();
+		data.setData("Xavier", "Suku");
+		data.setData("dps", "Kartik");
+		data.iterateMap();
 		
 
 	}
