@@ -2,6 +2,7 @@ package collectionPack;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import static java.util.Map.entry;
 
@@ -57,6 +58,15 @@ public class MapBasics {
 		for(String sc : studentData.keySet())
 			System.out.println(sc + " "+ studentData.get(sc));
 			
+	}
+	//test storage of objects in map
+	public Map<StoreData, String> addtomap(StoreData []store)
+	{
+		Map<StoreData, String > data = new LinkedHashMap<>();
+		for(StoreData o:store)
+		data.put(o,"SampleData");
+		
+		return data;
 	}
 	
 }

@@ -1,12 +1,12 @@
 package collectionPack;
 
 public class StoreData {
-int data;
-String category;
-public StoreData(int data , String category) {
-	this.data = data;
-	this.category = category;
-}
+String organisation;
+String name;
 
+public StoreData(String organisation, String category) {
+	this.organisation = organisation;
+	this.name = category;
+}
 
 }

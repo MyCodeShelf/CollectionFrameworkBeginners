@@ -44,6 +44,18 @@ public class Driver {
 		data.setData("Xavier", "Suku");
 		data.setData("dps", "Kartik");
 		data.iterateMap();
+		//Storing objects as key and analyzing the behhaviour
+		StoreData one = new StoreData("BMW", "Cars");
+		StoreData two = new StoreData("Vector" ,"Tools");
+		StoreData three = new StoreData("BMW" , "Cars");
+		StoreData[] store = {one , two ,three};
+		data.addtomap(store).forEach((StoreData , String)->System.out.println(StoreData.name + " "+StoreData.organisation+" "+String));
+		
+//---------------------------------------------------------------------------//
+		//Driver for set
+		SetBasics setdata = new SetBasics();
+		setdata.addtoSet(new String[] {"Batman", "Spiderman","Loki", "Avengers"});
+		setdata.iterateSet();
 		
 
 	}
