@@ -5,7 +5,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Driver {
 
@@ -55,11 +59,31 @@ public class Driver {
 			System.out.println("Hashes are not same. No need to check equals for further evaluation");
 		data.addtomap(store).forEach((StoreData , String)->System.out.println(StoreData.name + " "+StoreData.organisation+" "+String));
 		
+		//TreeMap
+		TreeMap<String, String> sorteddefaultmap = new TreeMap<>();
+		//LinkedHashMap
+		LinkedHashMap<String, String> maintaininsertionordermap = new LinkedHashMap<>();
+		for(StoreData obj : store)
+			{sorteddefaultmap.put(obj.name, obj.organisation);
+		    maintaininsertionordermap.put(obj.name, obj.organisation);}
+		//
 //---------------------------------------------------------------------------//
 		//Driver for set
 		SetBasics setdata = new SetBasics();
 		setdata.addtoSet(new String[] {"Batman", "Spiderman","Loki", "Avengers"});
 		setdata.iterateSet();
+		//treeset for storing in sorted way
+		TreeSet<String> defaultsorted = new TreeSet<>();
+		//linkedhashset to preserve the insertion order
+	    LinkedHashSet<String> insertionorder = new LinkedHashSet<>();
+	    
+			
+		for (String string :new String[] {"Batman", "Spiderman","Loki", "Avengers"} ) {
+			defaultsorted.add(string);
+			insertionorder.add(string);
+		}
+		System.out.println(defaultsorted);
+		System.out.println(insertionorder);
 		
 
 	}
