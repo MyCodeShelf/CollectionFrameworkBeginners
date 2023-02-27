@@ -49,6 +49,10 @@ public class Driver {
 		StoreData two = new StoreData("Vector" ,"Tools");
 		StoreData three = new StoreData("BMW" , "Cars");
 		StoreData[] store = {one , two ,three};
+		if(one.hashCode()== three.hashCode())
+			System.out.println("same hash value and now check the equals function");
+		else
+			System.out.println("Hashes are not same. No need to check equals for further evaluation");
 		data.addtomap(store).forEach((StoreData , String)->System.out.println(StoreData.name + " "+StoreData.organisation+" "+String));
 		
 //---------------------------------------------------------------------------//
