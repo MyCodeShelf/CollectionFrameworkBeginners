@@ -7,9 +7,12 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 import LambdaExamples.Sum;
 
@@ -110,7 +113,20 @@ public class Driver {
 		Sum anonymousImplementation = (int a ,int b ,int c)->{
 			System.out.println(a+b+c);
 		};
-		
+//----------------------------------------------------------------------------//
+		//stream api use with created linkedlist
+		List<String> one2 = new LinkedList<>(Arrays.asList("a","b","c"));
+		Stream<String> onestream = one2.stream();
+		//onestream.forEach(t -> System.out.println(t));
+		//onestream.map(t -> t+2).forEach(t -> System.out.println(t));
+		onestream.filter(t -> t.contains("a")).forEach(t->System.out.println(t));
+		//STREAM API WITH MAPS
+	    Map<Integer , String> mp = new LinkedHashMap<Integer , String>();
+	    mp.put(1 , "Java");
+	    mp.put(2, "kotlin");
+		Stream<Map.Entry<Integer, String>> mpstream = mp.entrySet().stream();
+		//mpstream.forEach(System.out::println);
+		mpstream.forEach(entry -> System.out.println(entry.getValue()+ " "+entry.getKey()));
 	}
 
 }
