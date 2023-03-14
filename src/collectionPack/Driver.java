@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import LambdaExamples.Sum;
+
 public class Driver {
 
 	public static void main(String[] args) {
@@ -85,7 +87,30 @@ public class Driver {
 		System.out.println(defaultsorted);
 		System.out.println(insertionorder);
 		
+//-----------------------------------------------------------------------------//
+		//Driver for linkedlist
+		LinkedListBasics lstobj = new LinkedListBasics();
+		lstobj.storeToLinkedList(new String[] {"Java" , "Kotlin" , "Xtend"});
+		lstobj.iterateList();
 
+//----------------------------------------------------------------------------//
+        
+		//over here we have created an anonymous inner class to save from creating multiple 
+		//class.java files as the sole purpose of the class was to provide implementation to
+		//the abstract method of implemented sum interface 
+		Sum anonymousClassobj = new Sum() {
+		 	@Override
+		 	public void add(int a, int b, int c) {
+		 		// TODO Auto-generated method stub
+		 	System.out.println(a+b+c);	
+		 	}
+		}; //end of anonymous inner class
+		
+		//same above can be done using lambda expression as shown below
+		Sum anonymousImplementation = (int a ,int b ,int c)->{
+			System.out.println(a+b+c);
+		};
+		
 	}
 
 }
